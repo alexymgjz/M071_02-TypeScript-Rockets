@@ -1,0 +1,49 @@
+.screen{
+    width: 700px;
+    height: 500px;
+    background-color: rgb(46, 45, 45);
+    background-image: url("../src/img/Sin\ título.png"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    #velocidad{
+        background-color: rgba(0, 0, 0, 0.363);
+        height: 20px;
+        padding: 0.2em 0.5em;
+        border-radius: 14px;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+    }
+    #velocidad1{
+        background-color: rgba(0, 0, 0, 0.363);
+        height: 20px;
+        padding: 0.2em 0.5em;
+        border-radius: 14px;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+    }
+}
+
+
+.screen:active.roket1 {
+    transition: transform translateX(-300px) 0.5s linear;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+width: 126px;
+border-radius: 6px;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+}
