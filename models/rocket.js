@@ -1,10 +1,10 @@
 "use strict";
 var Rocket = /** @class */ (function () {
     function Rocket(code) {
+        this.code = code;
         this.propursor = new Array();
         this.potenciaActual = 0;
         this.potenciaMaxima = 0;
-        this.code = code;
     }
     Rocket.prototype.addPropulsor = function (prop) {
         this.propursor.push(prop);
