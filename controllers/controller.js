@@ -82,8 +82,8 @@ function sumatoria(value) {
             break;
     }
 }
-var salto = 10;
-var salto1 = 10;
+var salto = 0;
+var salto1 = 0;
 var velocidadTotal = 0;
 var velocidadTotal1 = 0;
 function acelerarCohete(value) {
@@ -96,7 +96,7 @@ function acelerarCohete(value) {
                 var velocidad = (rockets[0]);
                 if (velocidad != undefined) {
                     rockets[0].propursor.forEach(function (popursor) {
-                        if (popursor.potencia >= salto && velocidadTotal < sumatoriaPropulsores) {
+                        if (popursor.potencia > salto && velocidadTotal < sumatoriaPropulsores) {
                             velocidadTotal += 10;
                             console.log('velocidadTotal ' + velocidadTotal);
                         }
@@ -136,22 +136,22 @@ function acelerarCohete(value) {
                 var velocidad1 = (rockets[1]);
                 if (velocidad1 != undefined) {
                     rockets[1].propursor.forEach(function (popursor) {
-                        if (popursor.potencia >= salto1 && velocidadTotal1 < sumatoriaPropulsores1) {
+                        if (popursor.potencia > salto1 && velocidadTotal1 < sumatoriaPropulsores1) {
                             velocidadTotal1 += 10;
                             console.log('velocidadTotal1 ' + velocidadTotal1);
                         }
                         console.log('popursor.potencia ' + popursor.potencia);
                     });
-                    if (salto1 >= 0 && velocidadTotal < sumatoriaPropulsores) {
+                    if (salto1 >= 0 && velocidadTotal1 < sumatoriaPropulsores) {
                         salto1 += 10;
                     }
                     console.log(salto1);
                     console.log('velocidadTotal1 ' + velocidadTotal1);
                     if (sumatoriaPropulsores1 == velocidadTotal1) {
-                        document.getElementById('velocidad1').innerText = "Limite de aceleracion del cohete 1 alcanzado";
+                        document.getElementById('velocidad1').innerText = "Limite de aceleracion del cohete 2 alcanzado";
                     }
                     else {
-                        document.getElementById('velocidad1').innerText = "La aceleracion actual del cohete 1 es de " + velocidadTotal1;
+                        document.getElementById('velocidad1').innerText = "La aceleracion actual del cohete 2 es de " + velocidadTotal1;
                     }
                     var timing1 = (30000) - (velocidadTotal1 * 100);
                     console.log('timing1 ' + timing1);
@@ -248,10 +248,10 @@ function frenarCohete(value) {
                     console.log('salto1' + salto1);
                     console.log('velocidadTotal1 ' + velocidadTotal1);
                     if (sumatoriaPropulsores1 == velocidadTotal1) {
-                        document.getElementById('velocidad').innerText = "Limite de potencia del cohete 1 alcanzado";
+                        document.getElementById('velocidad1').innerText = "Limite de potencia del cohete 2 alcanzado";
                     }
                     else {
-                        document.getElementById('velocidad').innerText = "La potencia actual del cohete 1 es de " + velocidadTotal;
+                        document.getElementById('velocidad1').innerText = "La potencia actual del cohete 2 es de " + velocidadTotal1;
                     }
                     var timing1 = (30000) - (velocidadTotal1 * 100);
                     var distance = 420;

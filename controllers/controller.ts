@@ -105,8 +105,8 @@ function sumatoria(value:number) {
 }
 
 
-    let salto = 10;
-    let salto1 = 10;
+    let salto =0;
+    let salto1 = 0;
     let velocidadTotal = 0;
     let velocidadTotal1 = 0;
 function acelerarCohete(value:number) {
@@ -120,7 +120,7 @@ function acelerarCohete(value:number) {
             let velocidad :any = (rockets[0]); 
                 if (velocidad!= undefined) {
                         rockets[0].propursor.forEach(popursor => {
-                        if (popursor.potencia >= salto && velocidadTotal<sumatoriaPropulsores) {
+                        if (popursor.potencia > salto && velocidadTotal<sumatoriaPropulsores) {
                             velocidadTotal+=10
                             console.log('velocidadTotal '+velocidadTotal);
                         }
@@ -164,22 +164,22 @@ function acelerarCohete(value:number) {
                 let velocidad1 :any = (rockets[1]); 
                     if (velocidad1!= undefined) {
                             rockets[1].propursor.forEach(popursor => {
-                            if (popursor.potencia >= salto1 && velocidadTotal1<sumatoriaPropulsores1 ) {
+                            if (popursor.potencia > salto1 && velocidadTotal1<sumatoriaPropulsores1 ) {
                                 velocidadTotal1+=10
                                 console.log('velocidadTotal1 '+velocidadTotal1);
                             }
                             console.log('popursor.potencia '+popursor.potencia);
     
                         });
-                        if (salto1>=0 && velocidadTotal<sumatoriaPropulsores) {
+                        if (salto1>=0 && velocidadTotal1<sumatoriaPropulsores) {
                             salto1+=10;
                         }
                         console.log(salto1);
                         console.log('velocidadTotal1 '+velocidadTotal1);
                         if(sumatoriaPropulsores1==velocidadTotal1){
-                            (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`Limite de aceleracion del cohete 1 alcanzado`;
+                            (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`Limite de aceleracion del cohete 2 alcanzado`;
                         }else{
-                            (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`La aceleracion actual del cohete 1 es de ${velocidadTotal1}`;
+                            (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`La aceleracion actual del cohete 2 es de ${velocidadTotal1}`;
                         }
                        let timing1 = (30000) - (velocidadTotal1 * 100); 
                         console.log('timing1 '+timing1);
@@ -288,9 +288,9 @@ function frenarCohete(value:number) {
                     console.log('salto1'+salto1);
                     console.log('velocidadTotal1 '+velocidadTotal1);
                     if(sumatoriaPropulsores1==velocidadTotal1){
-                        (<HTMLInputElement>document.getElementById('velocidad')).innerText =`Limite de potencia del cohete 1 alcanzado`;
+                        (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`Limite de potencia del cohete 2 alcanzado`;
                     }else{
-                        (<HTMLInputElement>document.getElementById('velocidad')).innerText =`La potencia actual del cohete 1 es de ${velocidadTotal}`;
+                        (<HTMLInputElement>document.getElementById('velocidad1')).innerText =`La potencia actual del cohete 2 es de ${velocidadTotal1}`;
                     }
                    let timing1 = (30000) - (velocidadTotal1 * 100); 
                 let distance = 420;
