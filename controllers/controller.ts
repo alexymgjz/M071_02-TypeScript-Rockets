@@ -27,6 +27,33 @@ function mostrarTodos() {
 }
 
 
+function mostrarChoete(value:number) {
+    (<HTMLInputElement>document.getElementById('infoAll')).innerHTML =``;
+    switch (value) {
+        case 0:
+            if (rockets[0]) {
+                (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=`El cohete1 ${rockets[0].code} la potencia de sus propulsores es:`
+                rockets[0].getPropulsores().forEach(propulsor => {
+                    (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=` ${propulsor.potencia} `;
+                } )
+            } 
+            (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=`La potencia maxima es de:${rockets[0].potenciaMaxima} </br>`
+            break;
+    
+            case 1:
+                if (rockets[1]) {
+                    (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=`El cohete1 ${rockets[1].code} la potencia de sus propulsores es:`
+                    rockets[1].getPropulsores().forEach(propulsor => {
+                        (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=` ${propulsor.potencia} `;
+                    } )
+                } 
+                (<HTMLInputElement>document.getElementById('infoAll')).innerHTML +=`La potencia maxima es de:${rockets[1].potenciaMaxima} </br>`
+                break;
+    }
+}
+
+
+
 function getRockets() {
     let val = '';
 

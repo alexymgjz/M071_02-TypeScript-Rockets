@@ -19,6 +19,29 @@ function mostrarTodos() {
     });
     document.getElementById('infoAll').innerHTML = "<p>" + val + "</p>";
 }
+function mostrarChoete(value) {
+    document.getElementById('infoAll').innerHTML = "";
+    switch (value) {
+        case 0:
+            if (rockets[0]) {
+                document.getElementById('infoAll').innerHTML += "El cohete1 " + rockets[0].code + " la potencia de sus propulsores es:";
+                rockets[0].getPropulsores().forEach(function (propulsor) {
+                    document.getElementById('infoAll').innerHTML += " " + propulsor.potencia + " ";
+                });
+            }
+            document.getElementById('infoAll').innerHTML += "La potencia maxima es de:" + rockets[0].potenciaMaxima + " </br>";
+            break;
+        case 1:
+            if (rockets[1]) {
+                document.getElementById('infoAll').innerHTML += "El cohete1 " + rockets[1].code + " la potencia de sus propulsores es:";
+                rockets[1].getPropulsores().forEach(function (propulsor) {
+                    document.getElementById('infoAll').innerHTML += " " + propulsor.potencia + " ";
+                });
+            }
+            document.getElementById('infoAll').innerHTML += "La potencia maxima es de:" + rockets[1].potenciaMaxima + " </br>";
+            break;
+    }
+}
 function getRockets() {
     var val = '';
     rockets.forEach(function (rocket) {
